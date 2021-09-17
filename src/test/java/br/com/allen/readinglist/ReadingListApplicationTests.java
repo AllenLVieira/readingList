@@ -1,4 +1,4 @@
-package br.com.allen.readingList;
+package br.com.allen.readinglist;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
