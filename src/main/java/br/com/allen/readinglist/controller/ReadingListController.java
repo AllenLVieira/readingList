@@ -34,12 +34,10 @@ public class ReadingListController {
 
     @PostMapping("readinglist/{reader}")
     public String addToReadingList(@PathVariable("reader") String reader, @Valid Book book, BindingResult result){
-        if(result.hasErrors()){
-            System.out.println(result);
-            return "readinglist";
+        if(!result.hasErrors()) {
+            book.setReader(reader);
+            readingListRepository.save(book);
         }
-        book.setReader(reader);
-        readingListRepository.save(book);
         return "redirect:/readinglist/{reader}";
     }
 }
